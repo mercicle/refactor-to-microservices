@@ -7,6 +7,7 @@
 * GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
 
 ![Travis Webhook](./github-travis-webhook.png)
+
 * Travis CI showing a successful build and deploy job
 
 ![Travis CI](./travis-ci.png)
