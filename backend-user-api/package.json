@@ -1,6 +1,6 @@
 {
-  "name": "udagram-api",
-  "version": "2.0.0",
+  "name": "udagram-api-user",
+  "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
   "scripts": {

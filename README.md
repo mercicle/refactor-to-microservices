@@ -18,8 +18,15 @@ export AWS_BUCKET=udagram-mercer-dev;
 export JWT_SECRET=
 export URL=http://localhost:8100
 ```
+
 5. Deleted package-lock.json file transferred from original microservice /project folder
 6. Created new README to outline steps taken (this README :))
 7. Renamed udagram-api as backend-user-api and copied backend-user-api as backend-feed-api
 8. Removed superfluous code from respective backend api's (feed from user, and users from feed)
-9. 
+9. Local testing: ensure that after the backend reorg everything works locally.
+  9a. Front end
+  9b. Back end user
+  9c. Back end feed
+
+**I tried to run both backend API's and realized there both set to same port so can't test locally without changing the frontend app to use different ports for users and feed. Found this discussion and decided to test from containers versus changing the ports:**
+https://knowledge.udacity.com/questions/238085
