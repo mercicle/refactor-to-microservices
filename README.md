@@ -28,7 +28,8 @@ export URL=http://localhost:8100
   9b. Back end user ✅
   9c. Back end feed ✅
 
-
 **I tried to run both backend API's and realized there both set to same port so can't test locally without changing the frontend app to use different ports for users and feed.
 Found this discussion and decided to test from containers versus changing the ports:**
 https://knowledge.udacity.com/questions/238085
+
+10. From step 9, I have to build the images for the respective apps and figure out how to use docker compose to simultaneous building. 
