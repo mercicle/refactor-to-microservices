@@ -7,20 +7,22 @@ import * as c from '../../../../config/config';
 
 const router: Router = Router();
 
+const STATUS_OK = 200, STATUS_CREATED = 201, STATUS_BAD_REQUEST = 400, STATUS_UNAUTHORIZED = 401, STATUS_INTERNAL_ERROR = 500;
+
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
   if (!req.headers || !req.headers.authorization) {
-    return res.status(401).send({message: 'No authorization headers.'});
+    return res.status(STATUS_UNAUTHORIZED).send({message: 'No authorization headers.'});
   }
 
   const tokenBearer = req.headers.authorization.split(' ');
   if (tokenBearer.length != 2) {
-    return res.status(401).send({message: 'Malformed token.'});
+    return res.status(STATUS_UNAUTHORIZED).send({message: 'Malformed token.'});
   }
 
   const token = tokenBearer[1];
   return jwt.verify(token, c.config.jwt.secret, (err, decoded) => {
     if (err) {
-      return res.status(500).send({auth: false, message: 'Failed to authenticate.'});
+      return res.status(STATUS_INTERNAL_ERROR).send({auth: false, message: 'Failed to authenticate.'});
     }
     return next();
   });
@@ -51,7 +53,7 @@ router.get('/signed-url/:fileName',
     async (req: Request, res: Response) => {
       const {fileName} = req.params;
       const url = AWS.getPutSignedUrl(fileName);
-      res.status(201).send({url: url});
+      res.status(STATUS_CREATED).send({url: url});
     });
 
 // Create feed with metadata
@@ -62,11 +64,11 @@ router.post('/',
       const fileName = req.body.url; // same as S3 key name
 
       if (!caption) {
-        return res.status(400).send({message: 'Caption is required or malformed.'});
+        return res.status(STATUS_BAD_REQUEST).send({message: 'Caption is required or malformed.'});
       }
 
       if (!fileName) {
-        return res.status(400).send({message: 'File url is required.'});
+        return res.status(STATUS_BAD_REQUEST).send({message: 'File url is required.'});
       }
 
       const item = await new FeedItem({
@@ -77,7 +79,7 @@ router.post('/',
       const savedItem = await item.save();
 
       savedItem.url = AWS.getGetSignedUrl(savedItem.url);
-      res.status(201).send(savedItem);
+      res.status(STATUS_CREATED).send(savedItem);
     });
 
 export const FeedRouter: Router = router;
