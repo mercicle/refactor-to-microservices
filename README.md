@@ -20,4 +20,6 @@ export URL=http://localhost:8100
 ```
 5. Deleted package-lock.json file transferred from original microservice /project folder
 6. Created new README to outline steps taken (this README :))
-7. 
+7. Renamed udagram-api as backend-user-api and copied backend-user-api as backend-feed-api
+8. Removed superfluous code from respective backend api's (feed from user, and users from feed)
+9. 
