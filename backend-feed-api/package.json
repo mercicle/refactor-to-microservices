@@ -1,6 +1,6 @@
 {
   "name": "udagram-api-feed",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
   "scripts": {
