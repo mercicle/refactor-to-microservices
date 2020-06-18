@@ -24,9 +24,9 @@ export URL=http://localhost:8100
 7. Renamed udagram-api as backend-user-api and copied backend-user-api as backend-feed-api
 8. Removed superfluous code from respective backend api's (feed from user, and users from feed)
 9. **Local** individual testing: ensure that after the backend reorg everything works locally (individually).
-  - 9a. Front end ✅
-  - 9b. Back end user ✅
-  - 9c. Back end feed ✅
+  - Front end ✅
+  - Back end user ✅
+  - Back end feed ✅
 
 **I tried to run both backend API's and realized there both set to same port so can't test locally without changing the frontend app to use different ports for users and feed.
 Found this discussion and decided to test from containers versus changing the ports:**
