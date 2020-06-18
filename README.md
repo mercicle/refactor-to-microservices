@@ -41,17 +41,29 @@ Docker cmd's for each service, pushing them to a new repository I created to hou
 
 ```
 docker build –t udagram-frontend .
-docker tag udagram-frontend mercicle/microservice-project
-docker push mercicle/microservice-project
+docker tag udagram-frontend mercicle/microservice-project:frontend
+docker push mercicle/microservice-project:frontend
 
 docker build –t udagram-backend-user .
-docker tag udagram-backend-user mercicle/microservice-project
-docker push mercicle/microservice-project
+docker tag udagram-backend-user mercicle/microservice-project:user
+docker push mercicle/microservice-project:user
 
 docker build –t udagram-backend-feed.
-docker tag udagram-backend-feed mercicle/microservice-project
-docker push mercicle/microservice-project
+docker tag udagram-backend-feed mercicle/microservice-project:feed
+docker push mercicle/microservice-project:feed
 
 ```
 
-12. Test if the images show how on Dockerhub
+12. Success screenshots
+
+![frontend-success-build](./screenshots/frontend-success-build.png)
+![backend-feed-success-build](./screenshots/backend-feed-success-build.png)
+![backend-user-success-build](./screenshots/backend-user-success-build.png)
+
+But, a warning for node-pre-gyp during the backend builds:
+![node-pre-gyp-warning](./screenshots/node-pre-gyp-warning.png)
+
+13. Test if the images show how on Dockerhub ❌
+14. I forgot to :tag the images when pushing so changed step 11 to include :tag in the tag and push steps. Then checked Dockerhub for success ✅.
+
+![dockerhub-push-services-success](./screenshots/dockerhub-push-services-success.png)
