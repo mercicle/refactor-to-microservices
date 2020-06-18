@@ -32,4 +32,26 @@ export URL=http://localhost:8100
 Found this discussion and decided to test from containers versus changing the ports:**
 https://knowledge.udacity.com/questions/238085
 
-10. From step 9, I have to build the images for the respective apps and figure out how to use docker compose to simultaneous building. 
+10. From step 9, I have to build the images for the respective apps and figure out how to use docker compose to simultaneous building. So created the respective Dockerfile's.
+11. cd into each app component (frontend, backend feed, backend user) and build the docker images
+
+Docker cmd's for each service, pushing them to a new repository I created to house all the microservices:
+
+**https://hub.docker.com/repository/docker/mercicle/microservice-project**
+
+```
+docker build –t udagram-frontend .
+docker tag udagram-frontend mercicle/microservice-project
+docker push mercicle/microservice-project
+
+docker build –t udagram-backend-user .
+docker tag udagram-backend-user mercicle/microservice-project
+docker push mercicle/microservice-project
+
+docker build –t udagram-backend-feed.
+docker tag udagram-backend-feed mercicle/microservice-project
+docker push mercicle/microservice-project
+
+```
+
+12. Test if the images show how on Dockerhub
