@@ -120,3 +120,13 @@ docker push mercicle/microservice-project:reverseproxy
 ![docker-build-reverseproxy-success](./screenshots/docker-build-reverseproxy-success.png)
 
 18. Updating the k8s service and deployment template files from class with the service information for the 2 backends, frontend, and reverseproxy in /deployment/k8s
+19 Testing docker-compose-build
+
+`docker-compose -f docker-compose-build.yaml build --parallel`
+
+[Docker Compose Build Success Log](./logs/docker-compose-build-success-log.txt)
+
+`docker-compose -f docker-compose-build.yaml push`
+[Docker Compose Push Success Log](./logs/docker-compose-push-success-log.txt)
+
+`docker-compose up`
