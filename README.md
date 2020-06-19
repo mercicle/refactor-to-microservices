@@ -119,4 +119,4 @@ docker push mercicle/microservice-project:reverseproxy
 
 ![docker-build-reverseproxy-success](./screenshots/docker-build-reverseproxy-success.png)
 
-18. Updating the k8s service and deployment template files with the service information for the 2 backends, frontend, and reverseproxy.
+18. Updating the k8s service and deployment template files from class with the service information for the 2 backends, frontend, and reverseproxy in /deployment/k8s
