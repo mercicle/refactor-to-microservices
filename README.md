@@ -48,7 +48,7 @@ docker build –t udagram-backend-user .
 docker tag udagram-backend-user mercicle/microservice-project:user
 docker push mercicle/microservice-project:user
 
-docker build –t udagram-backend-feed.
+docker build –t udagram-backend-feed .
 docker tag udagram-backend-feed mercicle/microservice-project:feed
 docker push mercicle/microservice-project:feed
 
@@ -99,3 +99,11 @@ This was successful to run the container and tested using:
 > curl --location --request GET http://localhost:8080/api/v0/feed
 {"count":0,"rows":[]}
 ```
+
+16. Setting up deployment docker compose yaml files and nginx reverseproxy in /deployment/docker folder.
+From https://docs.docker.com/compose/:
+  - Define your app’s environment with a Dockerfile so it can be reproduced anywhere.
+    - Here the app is the reverseproxy that acts as a single point of contact for the services
+  - Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
+    - this contains the 2 backend and 1 frontend service as well as the reverseproxy service.
+  - Run docker-compose up and Compose starts and runs your entire app.
