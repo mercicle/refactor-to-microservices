@@ -107,3 +107,16 @@ From https://docs.docker.com/compose/:
   - Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
     - this contains the 2 backend and 1 frontend service as well as the reverseproxy service.
   - Run docker-compose up and Compose starts and runs your entire app.
+
+17. Build the reverse proxy image from deployment folder:
+
+```
+docker build –t reverseproxy .
+docker tag reverseproxy mercicle/microservice-project:reverseproxy
+docker push mercicle/microservice-project:reverseproxy
+
+```
+
+![docker-build-reverseproxy-success](./screenshots/docker-build-reverseproxy-success.png)
+
+18. Updating the k8s service and deployment template files with the service information for the 2 backends, frontend, and reverseproxy.
