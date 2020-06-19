@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 services:
   reverseproxy:
       image: reverseproxy
@@ -9,7 +9,7 @@ services:
         - backend-user
         - backend-feed
   backend-user:
-    image: udagram-backend-user
+    image: mercicle/microservice-project:udagram-backend-user
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -21,7 +21,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: $URL
   backend-feed:
-    image: udagram-backend-feed
+    image: mercicle/microservice-project:udagram-backend-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -35,6 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: $URL
   frontend:
-    image: udagram-frontend
+    image: mercicle/microservice-project:udagram-frontend
     ports:
       - "8100:80"

@@ -1,0 +1,94 @@
+mercicle:docker mercicle$ docker-compose -f docker-compose-build.yaml push
+Pushing reverseproxy (reverseproxy:latest)...
+The push refers to repository [docker.io/library/reverseproxy]
+135eecd1b500: Preparing
+a181cbf898a0: Preparing
+570fc47f2558: Preparing
+5d17421f1571: Preparing
+7bb2a9d37337: Preparing
+3e207b409db3: Waiting
+ERROR: denied: requested access to the resource is denied
+mercicle:docker mercicle$ docker-compose -f docker-compose-build.yaml build --parallel
+Building reverseproxy ...
+Building backend_user ...
+Building backend_feed ...
+Building frontend     ...
+Building backend_feed
+Building backend_user
+Building frontend
+Building reverseproxy
+Step 1/2 : FROM nginx:alpine
+ ---> 7d0cdcc60a96
+Step 2/2 : COPY nginx.conf /etc/nginx/nginx.conf
+Building reverseproxy ... done
+ ---> 3821e9c7dce0
+Successfully built 3821e9c7dce0
+Successfully tagged mercicle/microservice-project:reverseproxy
+Step 1/7 : FROM node:12
+ ---> b31738bd2a38
+Step 2/7 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 232ec860cbce
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> 6cc291d1dd5e
+Step 4/7 : RUN npm ci
+ ---> Using cache
+ ---> d33fec107f8b
+Step 5/7 : COPY . .
+ ---> Using cache
+ ---> 07c418dff290
+Step 6/7 : EXPOSE 8080
+ ---> Using cache
+ ---> bae33d685ecc
+Step 7/7 : CMD [ "npm", "run", "prod" ]
+ ---> Using cache
+Building backend_user ... done
+Successfully built c5ea155ac3f6
+Successfully tagged mercicle/microservice-project:udagram-backend-user
+Step 1/7 : FROM node:12
+ ---> b31738bd2a38
+Step 2/7 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 232ec860cbce
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> f89a4bc3cfd6
+Step 4/7 : RUN npm ci
+ ---> Using cache
+ ---> 2ce1894b58b4
+Step 5/7 : COPY . .
+ ---> Using cache
+ ---> 9efb972e0218
+Step 6/7 : EXPOSE 8080
+ ---> Using cache
+ ---> 86593c43f874
+Step 7/7 : CMD [ "npm", "run", "prod" ]
+ ---> Using cache
+ ---> 4548eaa8e3dd
+Building backend_feed ... done
+Successfully tagged mercicle/microservice-project:udagram-backend-feed
+Step 1/8 : FROM beevelop/ionic:latest AS ionic
+ ---> 3f7405e00db7
+Step 2/8 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 70e55faedee6
+Step 3/8 : COPY package*.json ./
+ ---> Using cache
+ ---> 4fe3e6594e7f
+Step 4/8 : RUN npm ci
+ ---> Using cache
+ ---> 20a1af1c5436
+Step 5/8 : COPY . .
+ ---> Using cache
+ ---> 0e5a5e6e4373
+Step 6/8 : RUN ionic build
+ ---> Using cache
+ ---> c28ab848c13c
+Step 7/8 : FROM nginx:alpine
+ ---> 7d0cdcc60a96
+Step 8/8 : COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
+ ---> Using cache
+ ---> 850880c4d42a
+Successfully built 850880c4d42a
+Building frontend     ... done

@@ -120,6 +120,7 @@ docker push mercicle/microservice-project:reverseproxy
 ![docker-build-reverseproxy-success](./screenshots/docker-build-reverseproxy-success.png)
 
 18. Updating the k8s service and deployment template files from class with the service information for the 2 backends, frontend, and reverseproxy in /deployment/k8s
+
 19 Testing docker-compose-build
 
 `docker-compose -f docker-compose-build.yaml build --parallel`
@@ -129,4 +130,18 @@ docker push mercicle/microservice-project:reverseproxy
 `docker-compose -f docker-compose-build.yaml push`
 [Docker Compose Push Success Log](./logs/docker-compose-push-success-log.txt)
 
-`docker-compose up`
+Error! ❌ Forgot to prefix the images with the account/repository:[service name] to locate where to push them.
+![docker-compose-push-error-forgot-prefix](./screenshots/docker-compose-push-error-forgot-prefix.png)
+
+20. Fix the docker-compose account/repository:[service name] format error in deployment/docker-compose.yaml and docker-compose-build.yaml. Then ran again:
+`docker-compose -f docker-compose-build.yaml build --parallel`
+
+[Docker Compose Build Success Log](./logs/docker-compose-build-success-log-after-fix.txt)
+
+`docker-compose -f docker-compose-build.yaml push`
+[Docker Compose Push Success Log](./logs/docker-compose-push-success-log.txt)
+
+Docker up error! ❌ Even after settings in docker-compose to use different ports I get a `port is already allocated` error.
+![docker-up-error](./screenshots/docker-up-error.png)
+
+21. Fix the port error above by ...

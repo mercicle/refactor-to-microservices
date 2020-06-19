@@ -1,0 +1,51 @@
+mercicle:docker mercicle$ docker-compose -f docker-compose-build.yaml push
+Pushing reverseproxy (mercicle/microservice-project:reverseproxy)...
+The push refers to repository [docker.io/mercicle/microservice-project]
+135eecd1b500: Pushed
+a181cbf898a0: Layer already exists
+570fc47f2558: Layer already exists
+5d17421f1571: Layer already exists
+7bb2a9d37337: Pushed
+3e207b409db3: Pushed
+reverseproxy: digest: sha256:e8cbc96f68985238b78aa3b7de49a7a8022b923abd263270f72461c88a12ebfe size: 1567
+Pushing backend_user (mercicle/microservice-project:udagram-backend-user)...
+The push refers to repository [docker.io/mercicle/microservice-project]
+7a6e2b417471: Pushed
+e1776f5f6daa: Pushed
+ac3f107cedd4: Pushed
+b937ce525664: Layer already exists
+c74911e43e8e: Layer already exists
+bd60597b9a48: Layer already exists
+920ae377829c: Layer already exists
+bc17cd405095: Layer already exists
+ee854067fbbd: Layer already exists
+740ffea5d5c3: Layer already exists
+eac9ead92b24: Layer already exists
+23bca356262f: Layer already exists
+8354d5896557: Layer already exists
+udagram-backend-user: digest: sha256:de46675cded6dab25f8e85ccdf8f4c76fa70b6f32977da207b113408b5b56c5e size: 3054
+Pushing backend_feed (mercicle/microservice-project:udagram-backend-feed)...
+The push refers to repository [docker.io/mercicle/microservice-project]
+a6f23b82c34f: Pushed
+08a37a36d4a9: Pushed
+e7c7efdc610f: Pushed
+b937ce525664: Layer already exists
+c74911e43e8e: Layer already exists
+bd60597b9a48: Layer already exists
+920ae377829c: Layer already exists
+bc17cd405095: Layer already exists
+ee854067fbbd: Layer already exists
+740ffea5d5c3: Layer already exists
+eac9ead92b24: Layer already exists
+23bca356262f: Layer already exists
+8354d5896557: Layer already exists
+udagram-backend-feed: digest: sha256:f399fb23d4f2fdababf7fe5ffa27c0a7cff2e497f30a883397edcac64a6042e5 size: 3054
+Pushing frontend (mercicle/microservice-project:udagram-frontend)...
+The push refers to repository [docker.io/mercicle/microservice-project]
+4be219e4d35d: Pushed
+a181cbf898a0: Layer already exists
+570fc47f2558: Layer already exists
+5d17421f1571: Layer already exists
+7bb2a9d37337: Layer already exists
+3e207b409db3: Layer already exists
+udagram-frontend: digest: sha256:cc61cc8ba6508d1dc5018c7e67b71ceeaf65ce0c6056178fd9e8b42d07229238 size: 1571

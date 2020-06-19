@@ -3,16 +3,16 @@ services:
   reverseproxy:
     build:
       context: .
-    image: reverseproxy
+    image: mercicle/microservice-project:reverseproxy
   backend_user:
     build:
       context: ../../backend-user-api
-    image: udagram-backend-user
+    image: mercicle/microservice-project:udagram-backend-user
   backend_feed:
     build:
       context: ../../backend-feed-api
-    image: udagram-backend-feed
+    image: mercicle/microservice-project:udagram-backend-feed
   frontend:
     build:
       context: ../../frontend
-    image: udagram-frontend
+    image: mercicle/microservice-project:udagram-frontend
