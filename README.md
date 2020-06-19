@@ -67,3 +67,22 @@ But, a warning for node-pre-gyp during the backend builds:
 14. I forgot to :tag the images when pushing so changed step 11 to include :tag in the tag and push steps. Then checked Dockerhub for success ✅.
 
 ![dockerhub-push-services-success](./screenshots/dockerhub-push-services-success.png)
+
+15. Testing the builds with ```docker run ``` I received an error:
+```UnhandledPromiseRejectionWarning: SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:5432```
+
+But remembered (thanks to this article) need to pass in the env variables (duh!):
+https://knowledge.udacity.com/questions/230407
+and https://docs.docker.com/engine/reference/run/
+
+```
+docker run --rm --publish 8080:8080 $HOME/.aws:/root/.aws --env POSTGRES_HOST=$POSTGRES_HOST --env POSTGRES_USERNAME=$POSTGRES_USERNAME --env POSTGRES_PASSWORD=$POSTGRES_PASSWORD --env POSTGRES_DB=$POSTGRES_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --env URL=$URL --name feed mercicle/microservice-project
+```
+
+However, I still get this error:
+
+```
+mercicle:backend-feed-api mercicle$ docker run --rm --publish 8080:8080 $HOME/.aws:/root/.aws --env POSTGRES_HOST=$POSTGRES_HOST --env POSTGRES_USERNAME=$POSTGRES_USERNAME --env POSTGRES_PASSWORD=$POSTGRES_PASSWORD --env POSTGRES_DB=$POSTGRES_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --env URL=$URL --name feed mercicle/microservice-project
+**docker: invalid reference format: repository name must be lowercase.**
+
+```
