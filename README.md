@@ -139,6 +139,7 @@ Error! ❌ Forgot to prefix the images with the account/repository:[service name
 [Docker Compose Build Success Log](./logs/docker-compose-build-success-log-after-fix.txt)
 
 `docker-compose -f docker-compose-build.yaml push`
+
 [Docker Compose Push Success Log](./logs/docker-compose-push-success-log.txt)
 
 Docker up error! ❌ Even after settings in docker-compose to use different ports I get a `port is already allocated` error.
