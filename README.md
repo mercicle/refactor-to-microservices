@@ -162,3 +162,14 @@ Docker up error! ❌ Even after settings in docker-compose to use different port
 24. From lesson 5. we'd deploy via: `kubectl apply -f deployment.yaml`
 
 `kubectl apply -f deployment.yaml`
+`kubectl apply -f service.yaml`
+
+Before this, found from thread https://knowledge.udacity.com/questions/191887 that need to create: env-configmap.yaml, env-secret.yaml, aws-secret.yaml in deployment/k8s folder.
+
+25. kubectl describe services ❌
+```
+> kubectl describe services
+error: the server doesn't have a resource type "services"
+```
+
+26. Don't know how to translate the docker-compose framework to k8s?
