@@ -12,7 +12,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: reverseproxy
+      - image: mercicle/microservice-project:reverseproxy
         name: reverseproxy
         imagePullPolicy: Always
         resources:

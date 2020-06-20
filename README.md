@@ -245,6 +245,8 @@ However, I don't see the images updated in Docker Hub ❌ - I had this problem b
 
 ![My Dockerhub Repo is here](https://hub.docker.com/repository/docker/mercicle/microservice-project)
 
-32. Debugging why Dockerhub is not reflecting updated builds. Testing again after setting docker hub environment variables in Travis CI. And here is the Travis log inspection from original build, looks like the dockerhub path is not correct? (i.e. it's referencing docker.io)
+32. After debugging there was two issues:
+  - My tags in the final push were not set correctly.
+  - When entering the password into Travis env vars, the special characters needed to be escaped!
 
-![Travis CI Log Inspection](./screenshots/travis-log-inspection-after-not-updating-dockerhub.png)
+[Travis CI Docker Compose Build Success Log Confirmed on Dockerhub](./logs/travis-docker-compose-build-push-success-log-confirmed-dockerhub.txt)
