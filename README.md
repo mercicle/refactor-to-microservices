@@ -211,3 +211,23 @@ but my cluster creator IAM was:
 ![new-iam-eks-group](./screenshots/new-iam-eks-group.png)
 
 But still receive the unauthorized ❌ error.
+
+29. After setting my password for IAM user, logging in, and creating a cluster while logged in as udagram-john-dev, executed:
+
+`aws eks --region us-east-2 update-kubeconfig --name k8s-eks-cluster-for-microservice-refactor-v2`
+
+then  `kubectl cluster-info`:
+
+And success!! ✅ See below:
+
+```
+> aws eks --region us-east-2 update-kubeconfig --name k8s-eks-cluster-for-microservice-refactor-v2
+Added new context arn:aws:eks:us-east-2:443919578847:cluster/k8s-eks-cluster-for-microservice-refactor-v2 to /Users/mercicle/.kube/config
+> kubectl cluster-info
+Kubernetes master is running at https://22136E75A708DB483307430E082179FC.sk1.us-east-2.eks.amazonaws.com
+CoreDNS is running at https://22136E75A708DB483307430E082179FC.sk1.us-east-2.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+```
+
+30. Now, added Travic CI .travis.yml file for automatically running docker compose and docker push to docker hub
