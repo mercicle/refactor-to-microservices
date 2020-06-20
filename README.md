@@ -175,4 +175,16 @@ Before this, found from thread https://knowledge.udacity.com/questions/191887 th
 error: the server doesn't have a resource type "services"
 ```
 
-26. Don't know how to translate the docker-compose framework to k8s?
+26. Don't know how to translate the docker-compose framework to k8s? Mentor response, I totally forgot this command:
+
+`aws eks --region <region-code> update-kubeconfig --name <cluster_name>`
+
+So executed: `aws eks --region us-east-2 update-kubeconfig --name k8s-eks-cluster-for-microservice-refactor`
+
+![eks-update-kubeconfig](./screenshots/eks-update-kubeconfig.png)
+
+But when trying to run `kubectl cluster-info` got unauthorized ❌ error:
+![kubectl-unauthorized-error](./screenshots/kubectl-unauthorized-error.png)
+
+And found this on google but no resolution...
+[Always getting error: You must be logged in to the server (Unauthorized)](https://github.com/kubernetes-sigs/aws-iam-authenticator/issues/275)
