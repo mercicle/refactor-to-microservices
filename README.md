@@ -230,7 +230,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
 
-30. Now, added Travic CI .travis.yml file for automatically running docker compose and docker push to docker hub. This thread in the forum was very helpful!
+30. Before moving on to CD with k8s, I need to finish the CI using Travic CI .travis.yml file for automatically running docker compose and docker push to docker hub. This thread in the forum was very helpful!
 
 [How to use travis to build multiple containers with docker-compose?](https://knowledge.udacity.com/questions/176828)
 
@@ -250,3 +250,19 @@ However, I don't see the images updated in Docker Hub ❌ - I had this problem b
   - When entering the password into Travis env vars, the special characters needed to be escaped!
 
 [Travis CI Docker Compose Build Success Log Confirmed on Dockerhub](./logs/travis-docker-compose-build-push-success-log-confirmed-dockerhub.txt)
+
+** Travic CI is now successfully up and running, on to the CD! **
+
+33. Corrected my image names in the respective k8s-deployment yaml's to use the full [account]/[repository]:tag
+
+34. Deploy using kubectl:
+
+
+
+xx. Verify the k8s cluster is up and running:
+
+```
+kubectl get pods - show the pods in the cluster
+kubectl describe services - show the services in the cluster
+kubectl cluster-info - display information about the cluster
+```
