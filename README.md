@@ -192,7 +192,15 @@ Found that running:
 
 The Arn needs to match that of the one used to create the cluster! The Arn response was:
 
-`aws sts get-caller-identity`
+```
+> aws sts get-caller-identity
+{
+    "UserId": "...",
+    "Account": "...",
+    "Arn": "arn:aws:iam::443919578847:user/udagram-john-dev"
+}
+
+```
 
 but my cluster creator IAM was:
 
