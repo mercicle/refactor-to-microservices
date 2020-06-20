@@ -271,14 +271,32 @@ kubectl apply -f k8s-service-reverseproxy.yaml
 
 kubectl apply -f k8s-deployment-frontend.yaml
 kubectl apply -f k8s-service-frontend.yaml
-
-
 ```
+![Kubectl apply success](./screenshots/kubectl-apply-services-success.png)
 
-xx. Verify the k8s cluster is up and running:
+35. Verify the k8s cluster is up and running:
 
 ```
 kubectl get pods - show the pods in the cluster
 kubectl describe services - show the services in the cluster
 kubectl cluster-info - display information about the cluster
 ```
+
+![Kubectl describe services success](./screenshots/kubectl-describe-services-success.png)
+
+![Kubectl describe services success](./screenshots/kubectl-cluster-info-success.png)
+
+
+36. Setup Horizontal Pod Autoscaler
+
+`kubectl autoscale deployment <DEPLOYMENT_NAME> --cpu-percent=<DESIRED_THRESHOLD> --min=<MIN_PODS> --max=<MAX_PODS>`
+
+```
+kubectl autoscale deployment backend-feed --cpu-percent=50 --min=1 --max=10
+kubectl autoscale deployment backend-user --cpu-percent=50 --min=1 --max=10
+kubectl autoscale deployment frontend --cpu-percent=50 --min=1 --max=10
+kubectl autoscale deployment reverseproxy --cpu-percent=50 --min=1 --max=10
+kubectl get hpa
+```
+
+![Kubectl get HPA success](./screenshots/kubectl-get-hpa-success.png)
