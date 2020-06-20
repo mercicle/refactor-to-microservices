@@ -147,8 +147,18 @@ Docker up error! ❌ Even after settings in docker-compose to use different port
 
 21. Fix the port error above by: had to docker kill another running container on that port.
 
-22. Create a EKS cluster name = `k8s-eks-cluster-for-microservice-refactor` and node group `k8s-eks-cluster-for-microservice-refactor`  
+22. Create a EKS cluster name = `k8s-eks-cluster-for-microservice-refactor` and node group `k8s-eks-cluster-for-microservice-refactor`
+
 ![k8s-cluster-creation](./screenshots/k8s-cluster-creation.png)
 ![k8s-configure-node-group](./screenshots/k8s-configure-node-group.png)
 
-23. 
+**note to self:** node group role creation - https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html#create-worker-node-role
+
+23. A this point, we're ready to deploy to EKS k8s! I've already installed:
+  -  installed kubectl
+  -  setup aws-iam-authenticator
+  -  setup kubeconfig
+
+24. From lesson 5. we'd deploy via: `kubectl apply -f deployment.yaml`
+
+`kubectl apply -f deployment.yaml`
