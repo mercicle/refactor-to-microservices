@@ -186,9 +186,6 @@ So executed: `aws eks --region us-east-2 update-kubeconfig --name k8s-eks-cluste
 But when trying to run `kubectl cluster-info` got unauthorized ❌ error:
 ![kubectl-unauthorized-error](./screenshots/kubectl-unauthorized-error.png)
 
-And found this on google but no resolution...
-[Always getting error: You must be logged in to the server (Unauthorized)](https://github.com/kubernetes-sigs/aws-iam-authenticator/issues/275)
-
 27. From this google search [eks-api-server-unauthorized-error](https://aws.amazon.com/premiumsupport/knowledge-center/eks-api-server-unauthorized-error/)
 Found that running:
 `aws sts get-caller-identity`
