@@ -230,4 +230,19 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
 
-30. Now, added Travic CI .travis.yml file for automatically running docker compose and docker push to docker hub
+30. Now, added Travic CI .travis.yml file for automatically running docker compose and docker push to docker hub. This thread in the forum was very helpful!
+
+[How to use travis to build multiple containers with docker-compose?](https://knowledge.udacity.com/questions/176828)
+
+31. Travis ran successfully
+
+![Travis CI Docker Compose Build Success](./screenshots/travis-docker-compose-build-success.png)
+
+And full Travis CI success log is here:
+[Travis CI Docker Compose Build Success Log](./logs/travis-docker-compose-build-push-success-log.txt)
+
+However, I don't see the images updated in Docker Hub ❌ - I had this problem before and ![posted to Q&A Platform in this thread](https://knowledge.udacity.com/questions/234188) but no resolution.
+
+![My Dockerhub Repo is here](https://hub.docker.com/repository/docker/mercicle/microservice-project)
+
+32. Debugging why Dockerhub is not reflecting updated builds...
