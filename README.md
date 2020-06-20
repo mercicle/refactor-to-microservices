@@ -245,4 +245,4 @@ However, I don't see the images updated in Docker Hub ❌ - I had this problem b
 
 ![My Dockerhub Repo is here](https://hub.docker.com/repository/docker/mercicle/microservice-project)
 
-32. Debugging why Dockerhub is not reflecting updated builds...
+32. Debugging why Dockerhub is not reflecting updated builds. Testing again after setting docker hub environment variables in Travis CI!
