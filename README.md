@@ -147,5 +147,8 @@ Docker up error! ❌ Even after settings in docker-compose to use different port
 
 21. Fix the port error above by: had to docker kill another running container on that port.
 
-22. Create a EKS cluster name = `k8s-eks-cluster-for-microservice-refactor`
+22. Create a EKS cluster name = `k8s-eks-cluster-for-microservice-refactor` and node group `k8s-eks-cluster-for-microservice-refactor`  
 ![k8s-cluster-creation](./screenshots/k8s-cluster-creation.png)
+![k8s-configure-node-group](./screenshots/k8s-configure-node-group.png)
+
+23. 
