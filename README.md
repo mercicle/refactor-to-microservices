@@ -145,4 +145,7 @@ Error! ❌ Forgot to prefix the images with the account/repository:[service name
 Docker up error! ❌ Even after settings in docker-compose to use different ports I get a `port is already allocated` error.
 ![docker-up-error](./screenshots/docker-up-error.png)
 
-21. Fix the port error above by ...
+21. Fix the port error above by: had to docker kill another running container on that port.
+
+22. Create a EKS cluster name = `k8s-eks-cluster-for-microservice-refactor`
+![k8s-cluster-creation](./screenshots/k8s-cluster-creation.png)
