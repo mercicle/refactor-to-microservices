@@ -85,8 +85,7 @@ However, I still get this error:
 mercicle:backend-feed-api mercicle$ docker run --rm --publish 8080:8080 $HOME/.aws:/root/.aws --env POSTGRES_HOST=$POSTGRES_HOST --env POSTGRES_USERNAME=$POSTGRES_USERNAME --env POSTGRES_PASSWORD=$POSTGRES_PASSWORD --env POSTGRES_DB=$POSTGRES_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --env URL=$URL --name feed mercicle/microservice-project
 **docker: invalid reference format: repository name must be lowercase.**
 
-```
-Then submitted this help ticket https://knowledge.udacity.com/questions/241351 and found out I was missing the ```--volume``` in Step 15 and have added it.
+Then submitted this help ticket https://knowledge.udacity.com/questions/241351 and found out I was missing the `--volume` in Step 15 and have added it.
 
 ```
 docker run --rm --publish 8080:8080 --volume $HOME/.aws:/root/.aws --env POSTGRES_HOST=$POSTGRES_HOST --env POSTGRES_USERNAME=$POSTGRES_USERNAME --env POSTGRES_PASSWORD=$POSTGRES_PASSWORD --env POSTGRES_DB=$POSTGRES_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --env URL=$URL --name feed mercicle/microservice-project
@@ -251,7 +250,7 @@ However, I don't see the images updated in Docker Hub ❌ - I had this problem b
 
 [Travis CI Docker Compose Build Success Log Confirmed on Dockerhub](./logs/travis-docker-compose-build-push-success-log-confirmed-dockerhub.txt)
 
-** Travic CI is now successfully up and running, on to the CD! **
+**Travic CI is now successfully up and running, on to the CD!**
 
 33. Corrected my image names in the respective k8s-deployment yaml's to use the full [account]/[repository]:tag
 
@@ -283,9 +282,7 @@ kubectl cluster-info - display information about the cluster
 ```
 
 ![Kubectl describe services success](./screenshots/kubectl-describe-services-success.png)
-
 ![Kubectl describe services success](./screenshots/kubectl-cluster-info-success.png)
-
 
 36. Setup Horizontal Pod Autoscaler
 
