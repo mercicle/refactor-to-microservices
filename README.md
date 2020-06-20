@@ -257,7 +257,23 @@ However, I don't see the images updated in Docker Hub ❌ - I had this problem b
 
 34. Deploy using kubectl:
 
+kubectl apply -f deployment.yaml
 
+```
+kubectl apply -f k8s-deployment-feed.yaml
+kubectl apply -f k8s-service-feed.yaml
+
+kubectl apply -f k8s-deployment-user.yaml
+kubectl apply -f k8s-service-user.yaml
+
+kubectl apply -f k8s-deployment-reverseproxy.yaml
+kubectl apply -f k8s-service-reverseproxy.yaml
+
+kubectl apply -f k8s-deployment-frontend.yaml
+kubectl apply -f k8s-service-frontend.yaml
+
+
+```
 
 xx. Verify the k8s cluster is up and running:
 
