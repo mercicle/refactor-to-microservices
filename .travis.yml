@@ -6,7 +6,7 @@ env:
     - DOCKER_COMPOSE_VERSION=1.23.2
 
 before_install:
-  
+
     - docker -v && docker-compose -v
     - sudo rm /usr/local/bin/docker-compose
     - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -22,6 +22,6 @@ install:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push mercicle/microservice-project:reverseproxy
-  - docker push mercicle/microservice-project:user
-  - docker push mercicle/microservice-project:feed
-  - docker push mercicle/microservice-project:frontend
+  - docker push mercicle/microservice-project:udagram-backend-user
+  - docker push mercicle/microservice-project:udagram-backend-feed
+  - docker push mercicle/microservice-project:udagram-frontend
