@@ -206,4 +206,8 @@ but my cluster creator IAM was:
 
 `arn:aws:iam::443919578847:role/eksClusterRole`
 
-28. How do I reset the Arn so that it matches the one I used to create the cluster?
+28. How do I reset the Arn so that it matches the one I used to create the cluster? I tried to assign udagram-john-dev to a eks group:
+
+![new-iam-eks-group](./screenshots/new-iam-eks-group.png)
+
+But still receive the unauthorized ❌ error.
