@@ -188,3 +188,17 @@ But when trying to run `kubectl cluster-info` got unauthorized ❌ error:
 
 And found this on google but no resolution...
 [Always getting error: You must be logged in to the server (Unauthorized)](https://github.com/kubernetes-sigs/aws-iam-authenticator/issues/275)
+
+27. From this google search [eks-api-server-unauthorized-error](https://aws.amazon.com/premiumsupport/knowledge-center/eks-api-server-unauthorized-error/)
+Found that running:
+`aws sts get-caller-identity`
+
+The Arn needs to match that of the one used to create the cluster! The Arn response was:
+
+`aws sts get-caller-identity`
+
+but my cluster creator IAM was:
+
+`arn:aws:iam::443919578847:role/eksClusterRole`
+
+28. How do I reset the Arn so that it matches the one I used to create the cluster?
