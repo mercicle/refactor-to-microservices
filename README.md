@@ -83,6 +83,8 @@ However, I still get this error:
 
 ```
 mercicle:backend-feed-api mercicle$ docker run --rm --publish 8080:8080 $HOME/.aws:/root/.aws --env POSTGRES_HOST=$POSTGRES_HOST --env POSTGRES_USERNAME=$POSTGRES_USERNAME --env POSTGRES_PASSWORD=$POSTGRES_PASSWORD --env POSTGRES_DB=$POSTGRES_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --env URL=$URL --name feed mercicle/microservice-project
+```
+
 **docker: invalid reference format: repository name must be lowercase.**
 
 Then submitted this help ticket https://knowledge.udacity.com/questions/241351 and found out I was missing the `--volume` in Step 15 and have added it.
@@ -286,7 +288,9 @@ kubectl cluster-info - display information about the cluster
 
 36. Setup Horizontal Pod Autoscaler
 
-`kubectl autoscale deployment <DEPLOYMENT_NAME> --cpu-percent=<DESIRED_THRESHOLD> --min=<MIN_PODS> --max=<MAX_PODS>`
+```
+kubectl autoscale deployment <DEPLOYMENT_NAME> --cpu-percent=<DESIRED_THRESHOLD> --min=<MIN_PODS> --max=<MAX_PODS>
+```
 
 ```
 kubectl autoscale deployment backend-feed --cpu-percent=50 --min=1 --max=10
@@ -312,7 +316,7 @@ Initially unsuccessful:
 ![App can't be reached](./screenshots/kubectl-load-balancer-site-cant-be-reached.png)
 
 Added another load balancer for the reverse proxy after rereading help - now have a load balancer for frontend and reverseproxy.
-```
-kubectl apply -f k8s-service-load-balancer-reverseproxy.yaml
-```
+
+``` kubectl apply -f k8s-service-load-balancer-reverseproxy.yaml ```
+
 ![Both load balancers created](./screenshots/kubectl-added-both-load-balancers-for-public-exposure.png)
