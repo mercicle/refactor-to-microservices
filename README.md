@@ -297,3 +297,13 @@ kubectl get hpa
 ```
 
 ![Kubectl get HPA success](./screenshots/kubectl-get-hpa-success.png)
+
+37. But how to test the site with a public url? Found out ![here](https://knowledge.udacity.com/questions/243097#) that the cluster is not accessible publicly and you need a load balancer service to expose the frontend:
+
+```
+kubectl apply -f k8s-service-load-balancer.yaml
+```
+![Enable Access to the App on Internet](./screenshots/kubectl-added-load-balancer-for-public-exposure.png)
+
+For more information see this Kubernetes article:
+![Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
