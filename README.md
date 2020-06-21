@@ -310,3 +310,9 @@ For more information see this Kubernetes article:
 
 Initially unsuccessful:
 ![App can't be reached](./screenshots/kubectl-load-balancer-site-cant-be-reached.png)
+
+Added another load balancer for the reverse proxy after rereading help - now have a load balancer for frontend and reverseproxy.
+```
+kubectl apply -f k8s-service-load-balancer-reverseproxy.yaml
+```
+![Both load balancers created](./screenshots/kubectl-added-both-load-balancers-for-public-exposure.png)
