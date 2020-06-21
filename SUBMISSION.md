@@ -2,15 +2,15 @@
 ## Deployment Pipeline
 * DockerHub showing containers that you have pushed
 
-![Dockerhub containers](./dockerhub-push-services-success.png)
+![Dockerhub containers](./screenshots/dockerhub-push-services-success.png)
 
 * GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
 
-![Travis Webhook](./github-travis-webhook.png)
+![Travis Webhook](./screenshots/github-travis-webhook.png)
 
 * Travis CI showing a successful build and deploy job
 
-![Travis CI](./travis-docker-compose-build-success.png)
+![Travis CI](./screenshots/travis-docker-compose-build-success.png)
 
 ## Kubernetes
 * To verify Kubernetes pods are deployed properly
