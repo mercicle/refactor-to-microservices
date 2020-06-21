@@ -307,3 +307,6 @@ kubectl apply -f k8s-service-load-balancer.yaml
 
 For more information see this Kubernetes article:
 ![Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+
+Initially unsuccessful:
+![App can't be reached](./screenshots/kubectl-load-balancer-site-cant-be-reached.png)
