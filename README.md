@@ -242,9 +242,9 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 And full Travis CI success log is here:
 [Travis CI Docker Compose Build Success Log](./logs/travis-docker-compose-build-push-success-log.txt)
 
-However, I don't see the images updated in Docker Hub ❌ - I had this problem before and ![posted to Q&A Platform in this thread](https://knowledge.udacity.com/questions/234188) but no resolution.
+However, I don't see the images updated in Docker Hub ❌ - I had this problem before and [posted to Q&A Platform in this thread](https://knowledge.udacity.com/questions/234188) but no resolution.
 
-![My Dockerhub Repo is here](https://hub.docker.com/repository/docker/mercicle/microservice-project)
+[My Dockerhub Repo is here](https://hub.docker.com/repository/docker/mercicle/microservice-project)
 
 32. After debugging there was two issues:
   - My tags in the final push were not set correctly.
@@ -302,7 +302,7 @@ kubectl get hpa
 
 ![Kubectl get HPA success](./screenshots/kubectl-get-hpa-success.png)
 
-37. But how to test the site with a public url? Found out ![here](https://knowledge.udacity.com/questions/243097#) that the cluster is not accessible publicly and you need a load balancer service to expose the frontend:
+37. But how to test the site with a public url? Found out [here](https://knowledge.udacity.com/questions/243097) that the cluster is not accessible publicly and you need a load balancer service to expose the frontend:
 
 ```
 kubectl apply -f k8s-service-load-balancer.yaml
@@ -310,7 +310,7 @@ kubectl apply -f k8s-service-load-balancer.yaml
 ![Enable Access to the App on Internet](./screenshots/kubectl-added-load-balancer-for-public-exposure.png)
 
 For more information see this Kubernetes article:
-![Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+[Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
 
 Initially unsuccessful:
 ![App can't be reached](./screenshots/kubectl-load-balancer-site-cant-be-reached.png)
