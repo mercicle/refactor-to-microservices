@@ -6,9 +6,9 @@ metadata:
   name: reverseproxy
 spec:
   ports:
-  - name: "8100"
-    port: 8100
-    targetPort: 80
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
   selector:
     service: reverseproxy
   type: LoadBalancer
